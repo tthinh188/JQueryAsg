@@ -1,0 +1,104 @@
+body {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.search_container {
+    margin-top: 10px;
+}
+
+.edit_form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid gray;
+    width: 97%;
+    height: 94%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: -100%;
+    top: 0;
+    color: white;
+    transition: 0.5s;
+}
+
+.show {
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.closeIcon {
+    position: absolute;
+    right: 30px;
+    font-size: 2rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.row input {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.row label {
+    min-width: 100px;
+    text-align: left;
+}
+
+
+.row_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form button {
+    margin-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.person_additionalDetails {
+    color: rgb(42, 70, 226);
+    font-weight: 700;
+}
+
+.primary_btn {
+    background-color: #3f51b5;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px
+}
+
+.primary_btn:hover {
+    background-color: #2744ec;
+    transition: 0.5s;
+}
+
+.secondary_btn {
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px
+}
+
+.secondary_btn:hover {
+    background-color: #ce2b1f;
+    transition: 0.5s;
+}

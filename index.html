@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="jqueryassignmentdummydata.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Student Management System</h1>
+    </header>
+    <main>
+        <label for="limit">Number of records: </label>
+        <select name='limit' id='limit'>
+            <option value=20>20</option>
+            <option value=50>50</option>
+            <option value=100>100</option>
+            <option value=200>200</option>
+        </select>
+        <button class="primary_btn" id='submit'>Submit</button>
+        <button onclick='showForm(-1)' class="primary_btn" id='submit'>Add Student</button>
+        <div class="search_container">
+            <form class="search_form">
+                <label>Search By: </label>
+                <select name='searchOption' id='searchOption'>
+                    <option value='firstname'>First Name</option>
+                    <option value='lastname'>Last Name</option>
+                    <option value='location'>Location</option>
+                    <option value='phone'>Phone</option>
+                </select>
+                <input required id='search_term' placeholder="Search term">
+                <button class="secondary_btn" type='submit'>Search</button>
+            </form>
+        </div>
+
+        <form class="edit_form">
+            <h1>Edit Form</h1>
+            <button type='button' onclick="closeEditForm()" class="closeIcon">x</button>
+            <div class="row"><label>First Name: </label>
+                <div class='row_details'><input required id='firstName' placeholder="First Name"></div>
+            </div>
+            <div class="row"><label>Last Name: </label>
+                <div class='row_details'><input required id='lastName' placeholder="Last Name"></div>
+            </div>
+            <div class="row"><label>Email: </label>
+                <div class='row_details'><input type='email' required id='email' placeholder="Email"></div>
+            </div>
+            <div class="row"><label>Location: </label>
+                <div class='row_details'><input required id='location' placeholder="Location"></div>
+            </div>
+            <div class="row"><label>Phone: </label>
+                <div class='row_details'><input required id='phone' placeholder="Phone"></div>
+            </div>
+            <div class="row"><label>Address: </label>
+                <div class="row_details">
+                    <input required id='communication' placeholder="Communication">
+                    <input required id='permanent' placeholder="Permanent">
+                </div>
+            </div>
+            <div class="row"><label>Marks: </label>
+                <div class="row_details">
+                    <input required id='english' placeholder="English">
+                    <input required id='science' placeholder="Science">
+                    <input required id='computers' placeholder="Computers">
+                    <input required id='hardware' placeholder="Hardware">
+                </div>
+            </div>
+            <button class="primary_btn" type="submit">Submit</button>
+        </form>
+
+        <table>
+            <tr>
+                <th rowspan="2">First Name</th>
+                <th rowspan="2">Last Name</th>
+                <th rowspan="2">Email</th>
+                <th rowspan="2">Location</th>
+                <th rowspan="2">Phone</th>
+                <th colspan="2">Address</th>
+                <th colspan="4">Marks</th>
+                <th colspan="2">Options</th>
+            </tr>
+            <tr>
+                <th>Communication</th>
+                <th>Permanent</th>
+                <th>English</th>
+                <th>Science</th>
+                <th>Computers</th>
+                <th>Hardware</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+
+    </main>
+
+    <script src='./script.js'></script>
+</body>
+
+</html>
