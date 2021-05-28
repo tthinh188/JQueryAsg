@@ -139,11 +139,11 @@ $('.search_form').submit((e) => {
 })
 
 const windowScroll = () => {
-    $(window).on('scroll', async () => {
+    $(window).on('scroll', () => {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             limit += 10;
             let copy = people.slice(0, limit);
-            await showRecord(copy, limit);
+            showRecord(copy, limit);
 
             if (limit > people.length) {
                 $('table').append(`<tr><th colspan="13">No more record to show</th></tr>`)
