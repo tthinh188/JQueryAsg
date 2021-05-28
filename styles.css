@@ -8,7 +8,7 @@ body {
 }
 
 .edit_form {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     margin: auto;
