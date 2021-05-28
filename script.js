@@ -6,16 +6,9 @@ const readJsonFile = (() => {
 })();
 
 const View = (() => {
-    // dom keywords;
-    const domString = {
-        table: 'table',
-        editForm: 'edit_form',
-        searchForm: 'search_form',
-    }
-
     // build tmp;
     const showRecords = (records, numOfRecords) => {
-        $(domString.table).find("tr:gt(1)").remove()
+        $('table').find("tr:gt(1)").remove()
 
         let listOfRecord = records.slice(0, numOfRecords)
         listOfRecord.map((person, i) => {
@@ -37,11 +30,9 @@ const View = (() => {
                 </tr>`
             )
         });
-        localStorage.setItem('students', JSON.stringify(listOfRecord))
     }
 
     return {
-        domString,
         showRecords
     };
 })();
@@ -126,6 +117,7 @@ const Controller = ((view, module) => {
             closeEditForm();
             state.studentIndex = -1;
             View.showRecords(state.studentList, state.numOfRecords)
+            saveToLocalStorage(Controller.state.studentList)
         })
         $('.search_form').submit((e) => {
             e.preventDefault();
@@ -160,9 +152,9 @@ const Controller = ((view, module) => {
     const init = async () => {
         await module.getAllStudents('jqueryassignmentdummydata.json').then(data => {
             state.studentList = data;
+            saveToLocalStorage(state.studentList);
         })
         addListenerElements();
-
     }
 
     return {
@@ -175,6 +167,7 @@ const handleDelete = (index) => {
     const students = Controller.state.studentList;
     students.splice(index, 1)
     View.showRecords(students, Controller.state.numOfRecords);
+    saveToLocalStorage(students);
 }
 
 const showForm = (i) => {
@@ -227,5 +220,9 @@ const windowScroll = () => {
             }
         }
     });
+}
+
+const saveToLocalStorage = (records) => {
+    localStorage.setItem('students', JSON.stringify(records))
 }
 Controller.init();
