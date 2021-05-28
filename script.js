@@ -209,7 +209,6 @@ const closeEditForm = () => {
 
 const windowScroll = () => {
     $(window).on('scroll', () => {
-        console.log(scroll);
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             Controller.state.numOfRecords += 10;
             let students = Controller.state.studentList.slice(0, Controller.state.numOfRecords);
